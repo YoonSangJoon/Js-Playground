@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>연습문제 1-5</h1>
+    <h2>소수 판별 프로그램</h2>
+    <script>
+        var a = prompt("2 이상의 숫자를 입력하세요 : ");
+        var num = Number(a);
+        var isPrime = true;
+
+        for (var i = 2; i < num; i++) {
+            if (num % i === 0) {
+                isPrime = false;
+                console.log(isPrime, i);
+                break;
+            }
+        }
+
+        if (isPrime) {
+            document.write(num + " 은 소수입니다.");
+        } else {
+            document.write(num + " 은 소수가 아닙니다.");
+        }
+    </script>
+</body>
+
+</html>
