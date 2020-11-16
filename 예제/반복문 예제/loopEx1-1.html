@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>반복문 예제 1-1</h1>
+    <h2>입력한 수들의 갯수와 합을 구하는 프로그램</h2>
+    <h3>0을 입력받으면 입력 종료</h3>
+
+    <script>
+        var sum = 0;
+        var cnt = 0;
+        var a = 1;
+
+        while (a != 0) {
+            var a = prompt("숫자를 입력해주세요 : ");
+            var num = Number(a);
+            sum += num;
+
+            if (a === 0) {
+                break;
+            }
+
+            cnt++;
+        }
+
+        document.write("입력한 수들의 합은 " + sum + "입니다.");
+        document.write('<br/>')
+        document.write("총 " + (cnt - 1) + "회의 수를 입력하였습니다.");
+    </script>
+</body>
+
+</html>
