@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>배열과 문자열 3</title>
+</head>
+
+<body>
+    <script>
+        const b = [];
+        // push : 뒤에서부터 하나씩 추가.
+        b.push(100);
+        b.push(2);
+        b.push(3);
+        b.push(4);
+        document.write(b + "<br>");
+
+        document.write("<br>");
+
+        // pop : 뒤에서부터 하나씩 추출 및 제거.
+        document.write(b.pop() + "<br>");
+        document.write(b.pop() + "<br>");
+        document.write(b.pop() + "<br>");
+        document.write(b + "<br>");
+
+        document.write("<br>");
+
+        // unshift : 앞에서부터 하나씩 추가.
+        b.unshift(90);
+        b.unshift(30);
+        b.unshift(20);
+        document.write(b + "<br>");
+
+        // shift : 앞에서부터 하나씩 추출 및 제거.
+        document.write(b.shift() + "<br>");
+        document.write(b.shift() + "<br>");
+        document.write(b + "<br>");
+    </script>
+</body>
+
+</html>
