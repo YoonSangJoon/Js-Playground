@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Return 실습 2</title>
+</head>
+
+<body>
+    <h1>TEST</h1>
+    <script>
+        const foo = function () {
+            for (var i = 0; i < 10; i++) {
+                for (var j = 0; j < 10; j++) {
+                    document.write(i, j + "<br>");
+                    if (i === 5 && j === 3) {
+                        // break;
+                        // i 가 5가 되기전 까지는 i, j 모두 0 ~ 9 까지 출력됨.
+                        // i 가 5가 된 후로부터는 j는 3까지만 출력됨.
+                        return;
+                    }
+                }
+            }
+        }
+
+        foo();
+        // return 값이 있는 함수로 호출할 경우 i = 5, j = 3이 되는 시점에서 종료됨.
+    </script>
+</body>
+
+</html>
