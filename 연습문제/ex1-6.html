@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제 1-6</title>
+</head>
+
+<body>
+    <h1>연습문제 1-6</h1>
+    <h2>소수 출력 프로그램</h2>
+    <div id="result"></div>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+
+        numbers.isPrime = function (number) {
+            for (let i = 2; i <= number; i++) {
+                if (number % 2 == 0) {
+                    return false;
+                }
+            } return true;
+        };
+
+        numbers.addPrime = function () {
+            for (let i = 0; i < this.all.length; i++) {
+                let num = this.all[i]
+                if (this.isPrime(num)) {
+                    this.prime.push(num);
+                };
+            };
+        };
+
+        numbers.addAllNumbers = function (number) {
+            for (let i = 0; i < number; i++) {
+                this.all.push(i);
+            };
+        };
+
+        numbers.getAllPrimes = function () {
+            var res = "";
+            res += "<h2>전체 소수의 갯수 : " + this.prime.length + "</h2>\n";
+            for (let i = 0; i < this.prime.length; i++) {
+                res += (i + 1) + "번째 소수 : " + this.prime[i] + "<br>\n";
+            }
+            return res;
+        }
+
+        numbers.addAllNumbers(10000);
+        numbers.addPrime();
+        document.getElementById('result').innerHTML = numbers.getAllPrimes();
+    </script>
+</body>
+
+</html>
