@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>추가 미션 및 마무리하기</title>
+</head>
+
+<body>
+    <h1>실습 2-4</h1>
+    <h2>추가 미션 및 마무리하기</h2>
+
+    <script>
+        gugudan = {};
+        gugudan.results = [];
+        gugudan.current = 0;
+
+        gugudan.calculate = function (n, cc) {
+            this.current = n;
+            for (let i = 0; i < cc; i++) {
+                this.results[i] = n * (i + 1);
+            }
+        };
+
+        gugudan.print = function (cc) {
+            document.write("<h2>" + this.current + "단</h2>");
+
+            for (let i = 0; i < cc; i++) {
+                document.write(this.current + " * " + (i + 1) + " = " + this.results[i] + "<br>");
+            }
+        };
+
+        function main() {
+            let bb = prompt("단 입력 : ");
+            let dd = prompt("숫자 입력 : ");
+            for (bb; bb <= 9; bb++) {
+                gugudan.calculate(bb, dd);
+                gugudan.print(dd);
+            }
+        };
+
+        main();
+    </script>
+</body>
+
+</html>
