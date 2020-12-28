@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this 메소드</title>
+</head>
+
+<body>
+    <script>
+        const p2 = {};
+        p2.name = "crong";
+        p2.weight = 80;
+        p2.eat = function (food) {
+            console.log(this.name + " eats, " + food);
+            p2.weight++;
+        };
+
+        // 메소드 안에서 this 사용시 함수를 소유한 객체를 가르킨다.
+
+        p2.eat("chicken");
+        p2.name = "pobi";
+        p2.eat("soju");
+    </script>
+</body>
+
+</html>
