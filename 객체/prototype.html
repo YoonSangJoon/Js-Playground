@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체와 프로토타입</title>
+</head>
+
+<body>
+    <script>
+        const Human = function(name, atk) {
+            this.name = name;
+            this.hp = 100;
+            this.pow = atk;
+        };
+
+        Human.prototype.attack = function(target) {
+            target.hp -= this.pow;
+            document.write(target.hp);
+            document.write("<br>");
+        };
+
+        const p1 = new Human("honux", 20);
+        p1.attack(p1);
+
+        const p2 = new Human("crong", 30);
+        p2.attack(p1);
+
+        p1.item = ['sword', 'shield', 'potion'];
+        document.write(p1.item);
+        document.write("<br>");
+        document.write(p1.item[0]);
+        document.write("<br>");
+        document.write(p1.item[1]);
+        document.write("<br>");
+        document.write(p1.item[2]);
+        document.write("<br>");
+    </script>
+</body>
+
+</html>
