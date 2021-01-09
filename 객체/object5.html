@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>참조 변수와 Call by Reference</title>
+</head>
+
+<body>
+    <script>
+        const d = [1,2,3,4,5];
+        document.write(d);
+        document.write("<br>");
+
+        // 일반 변수 (기본타입을 변수에 할당하는 경우)
+
+
+        const e = {};
+        e.name = "honux";
+        document.write(e.name);
+        document.write("<br>");
+        
+        // 참조 변수 (객체를 변수에 할당하는 경우) ( {} 는 객체)
+
+        const arr1 = [1,2,3,4,5];
+        const arr2 = arr1;
+
+        document.write(arr2);
+        document.write("<br>");
+
+        arr1.push(6);
+        document.write(arr2);
+        document.write("<br>");
+        document.write(arr1 === arr2);
+        document.write("<br>");
+
+        // arr2는 arr1을 참조하는 변수이기 때문에, arr1을 변화시키면 arr2도 변화한다.
+
+        const foo = function(v) {
+            v *= 2;
+            document.write("foo : " + v);
+            document.write("<br>");
+        };
+
+        const n = 10;
+        document.write(`n = ${n}`);
+        document.write("<br>");
+        foo(n);
+
+        const p1 = {};
+        p1.name = "honux";
+        p1.w = 67;
+
+        const diet = function(people) {
+            people.w -= 1;
+            document.write(`${people.name} : ${people.w}`);
+        };
+
+        diet(p1);
+        document.write("<br>");
+        diet(p1);
+        document.write("<br>");
+        diet(p1);
+        document.write("<br>");
+        diet(p1);
+        document.write("<br>");
+        diet(p1);
+        document.write("<br>");
+        diet(p1);
+        document.write("<br>");
+
+        // 값 전달 변수는 함수 내부에서 값을 바꿔도 외부에서는 값이 그대로 유지.
+        // 참조 전달 변수는 함수 내부에서 값을 바꾸면 외부의 객체도 값이 바뀜.
+    </script>
+</body>
+
+</html>
