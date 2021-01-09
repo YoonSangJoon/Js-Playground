@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>6,7단 구구단</title>
+</head>
+
+<body>
+    <h1>실습 1-6</h1>
+    <h2>구구단 6,7단 구현하기 (for문)</h2>
+    <p>출력할 단수 : <input type="text" id="num" value="6"></p> <br>
+    <button onclick="runGugudan()">실행</button>
+
+    <script>
+
+        function runGugudan() {
+            const dan = document.getElementById("num").value;
+            let times = 1;
+            document.write("<h2>구구단 " + dan + "단</h2>");
+            for (times; times <= 9; times++) {
+                document.write(dan + " * " + times + " = " + (dan * times));
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>
