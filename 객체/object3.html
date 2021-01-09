@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON 표기법</title>
+</head>
+
+<body>
+    <script>
+        const m1 = {
+            "name": "honux",
+            "hp": 100,
+            "power": 20,
+            "attack": function (target) {
+                target.hp -= this.power;
+            }
+        };
+
+        console.log(m1);
+        m1.attack(m1);
+        console.log(m1);
+    </script>
+</body>
+
+</html>
