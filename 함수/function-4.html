@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Return 실습</title>
+</head>
+
+<body>
+    <script>
+        const five = function () {
+            return 5;
+        }
+
+        const n = five();
+        document.write(n);
+
+        // 리턴 값이 있을 경우 함수를 호출해서 변수에 값을 넣을 수 있음.
+
+        document.write("<br>");
+
+        const foo = function () {
+            document.write("I am foo");
+        }
+
+        foo();
+
+        // 리턴 값이 없는 함수를 변수에 넣고 실행할 경우 undefinded.
+
+        document.write("<br>");
+
+        const test1 = function (text) {
+            if (text === "exit") {
+                return;
+                // text가 exit일 경우 함수 종료.
+            }
+            document.write("보이나요?");
+        }
+
+        test1("hoho");
+        // 보이나요? 출력.
+
+        document.write("<br>");
+
+        test1("exit");
+        // 함수 종료.
+
+    </script>
+</body>
+
+</html>
