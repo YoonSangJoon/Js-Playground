@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자로 여러 객체를 쉽게 만들기</title>
+</head>
+
+<body>
+    <script>
+        const Human = function (name, hp, pow) {
+            this.name = name;
+            this.hp = hp;
+            this.pow = pow;
+            this.attack = function (target) {
+                document.write(this.name + "이" + target.name + "을 공격했다.");
+                target.hp -= this.pow;
+            };
+
+            this.show = function() {
+                document.write(`${this.name, this.hp}`);
+            };
+        };
+
+        const p1 = new Human ('honux', 100, 10);
+        const p2 = new Human ("Crong", 200, 1);
+        const p3 = new Human ("Pobi", 50, 30);
+
+        p1.attack(p2);
+        document.write(p2);
+        document.write("<br>");
+        p2.show();
+        document.write("<br>");
+
+        p3.attack(p1);
+        document.write("<br>");
+        p1.show();
+
+        
+        document.write("<br>");
+        document.write("<br>");
+
+        const Food = function(name, energy) {
+            this.name = name;
+            this.energy = energy;
+            this.feed = function (Human) {
+                Human.hp += this.energy;
+                document.write(Human.hp);
+            };
+        };
+
+        const d = new Food('donut', 30);
+        d.feed(p2);
+
+        // Food 객체와 Human 객체 연결.
+
+    </script>
+</body>
+
+</html>
